@@ -1,0 +1,25 @@
+{
+    "name": "friendsofsilverstripe/release-notifications",
+    "description": "Checks the CHANGELOG file and sends an email with the diff, if required.",
+    "type": "silverstripe-module",
+    "license": "BSD-3-Clause",
+    "homepage": "https://github.com/FriendsOfSilverStripe/release-notifications",
+    "keywords": [
+        "silverstripe",
+        "release",
+        "deployment",
+        "deploy"
+    ],
+    "authors": [
+        {
+            "name": "Peter Thaleikis",
+            "homepage": "https://github.com/spekulatius"
+        }
+    ],
+    "require": {
+        "silverstripe/framework": "^3.0"
+    },
+    "support": {
+        "issues": "https://github.com/FriendsOfSilverStripe/release-notifications/issues"
+    }
+}
