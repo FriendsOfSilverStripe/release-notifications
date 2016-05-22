@@ -17,7 +17,7 @@ This little helper sends [notification emails](https://github.com/FriendsOfSilve
 ## Installation
 
 ````bash
-composer require FriendsOfSilverStripe/release-notifications dev-master
+composer require FriendsOfSilverStripe/release-notifications
 ````
 
 ## Configuration
@@ -45,3 +45,5 @@ ReleaseNotification:
       recipients:
         - info@company.com
 ````
+
+## MISC: [Future ideas/development, issues](https://github.com/FriendsOfSilverStripe/release-notifications/issues), [Contributing](https://github.com/FriendsOfSilverStripe/release-notifications/blob/master/CONTRIBUTING.md), [License](https://github.com/FriendsOfSilverStripe/release-notifications/blob/master/license.md)
