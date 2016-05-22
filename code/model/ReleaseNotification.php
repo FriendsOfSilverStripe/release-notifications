@@ -70,7 +70,7 @@ class ReleaseNotification extends DataObject
     /**
      * sorts the config a bit different and returns it.
      *
-     * @param array  $environments
+     * @param array $environments
      * @param string $url
      *
      * @return array (either configuration or empty)
@@ -78,6 +78,9 @@ class ReleaseNotification extends DataObject
     public function prepConfig($environments, $url)
     {
         $environmentsByURL = array();
+        if (!is_array($environments)) {
+            $environments = array();
+        }
 
         foreach ($environments as $environment) {
             if (is_array($environment) && array_key_exists('url', $environment)) {
