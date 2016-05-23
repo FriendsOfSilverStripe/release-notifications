@@ -26,7 +26,7 @@ class ReleaseNotification extends DataObject
         $config = $this->prepConfig($this->config()->get('environments'), Director::absoluteURL('/'));
 
         // only run if everything is fine
-        if (is_array($config) && file_exists('../' . $config['filename'])) {
+        if (is_array($config) && !empty($config) && file_exists('../' . $config['filename'])) {
             // get the information in the database for the last release notification
             $record = (self::get()->count() == 0) ? new self() : self::get()->first();
 
