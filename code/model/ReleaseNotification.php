@@ -22,6 +22,9 @@ class ReleaseNotification extends DataObject
     {
         parent::requireDefaultRecords();
 
+        // verbose messages
+        DB::alteration_message('Searching for environment configuration for ' . Director::absoluteURL('/'), 'created');
+
         // get the config based on the URL (URL is key)
         $config = $this->prepConfig($this->config()->get('environments'), Director::absoluteURL('/'));
 
@@ -56,6 +59,8 @@ class ReleaseNotification extends DataObject
 
                 // save the new changelog to ensure we aren't re-running this in the next step
                 $record->Changelog = $changelog;
+            } else {
+                DB::alteration_message('No configuration or changelog file found.', 'created');
             }
 
             // say welcome :)
