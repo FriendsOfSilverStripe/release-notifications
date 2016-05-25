@@ -34,6 +34,8 @@ class ReleaseNotification extends DataObject
         } else if (!file_exists('../' . $config['filename'])) {
             DB::alteration_message('No CHANGELOG.md-file found.', 'created');
         } else {
+            DB::alteration_message($config['environment_name'] . ' identified.', 'created');
+
             // get the information in the database for the last release notification
             $record = (self::get()->count() == 0) ? new self() : self::get()->first();
 
@@ -41,7 +43,9 @@ class ReleaseNotification extends DataObject
             $changelog = trim(preg_replace('/^(.*\n){4}/', '', file_get_contents('../' . $config['filename'])));
 
             // check if the CHANGELOG.md file has been changed since the last run
-            if ($changelog != '' && md5($changelog) != md5($record->Changelog)) {
+            if ($changelog == '') {
+                DB::alteration_message('No change identified.', 'created');
+            } else if (md5($changelog) != md5($record->Changelog)) {
                 // email the changelog out
                 foreach ($config['recipients'] as $recipient) {
                     Email::create(
