@@ -29,7 +29,11 @@ class ReleaseNotification extends DataObject
         $config = $this->prepConfig($this->config()->get('environments'), Director::absoluteURL('/'));
 
         // only run if everything is fine
-        if (is_array($config) && !empty($config) && file_exists('../' . $config['filename'])) {
+        if (!is_array($config) || empty($config)) {
+            DB::alteration_message('No configuration found.', 'created');
+        } else if (!file_exists('../' . $config['filename'])) {
+            DB::alteration_message('No CHANGELOG.md-file found.', 'created');
+        } else {
             // get the information in the database for the last release notification
             $record = (self::get()->count() == 0) ? new self() : self::get()->first();
 
@@ -59,8 +63,6 @@ class ReleaseNotification extends DataObject
 
                 // save the new changelog to ensure we aren't re-running this in the next step
                 $record->Changelog = $changelog;
-            } else {
-                DB::alteration_message('No configuration or changelog file found.', 'created');
             }
 
             // say welcome :)
