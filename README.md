@@ -12,7 +12,7 @@ This little helper sends [notification emails](https://github.com/FriendsOfSilve
 ## Requirements
 
  * SilverStripe Framework 3.x
- * a plain-text CHANGELOG.md file in your website source code, during the deployment.
+ * a [markdown](https://daringfireball.net/projects/markdown/) [CHANGELOG.md](https://github.com/FriendsOfSilverStripe/release-notifications/blob/master/CHANGELOG.md) file in your website source code, during the deployment.
 
 ## Installation
 

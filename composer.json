@@ -7,8 +7,12 @@
     "keywords": [
         "silverstripe",
         "release",
+        "release process",
         "deployment",
-        "deploy"
+        "deploy",
+        "assistent",
+        "CHANGELOG",
+        "CHANGELOG.md"
     ],
     "authors": [
         {
@@ -17,7 +21,11 @@
         }
     ],
     "require": {
-        "silverstripe/framework": "~3.0"
+        "silverstripe/framework": "~3.0",
+        "php": "~5.4"
+    },
+    "suggest": {
+        "spekulatius/painfreereleases": "Kind of built together."
     },
     "support": {
         "issues": "https://github.com/FriendsOfSilverStripe/release-notifications/issues"
