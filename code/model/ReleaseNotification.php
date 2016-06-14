@@ -39,7 +39,7 @@ class ReleaseNotification extends DataObject
             // get the information in the database for the last release notification
             $record = (self::get()->count() == 0) ? new self() : self::get()->first();
 
-            // load the changelog and prep it by removing the first few lines
+            // load the changelog and remove the first 4 lines
             $changelog = trim(preg_replace('/^(.*\n){4}/', '', file_get_contents('../' . $config['filename'])));
 
             // check if the CHANGELOG.md file has been changed since the last run
