@@ -39,4 +39,4 @@ ReleaseNotification:
         - info@company.com
 ````
 
-## MISC: [Future ideas/development, issues](https://github.com/FriendsOfSilverStripe/release-notifications/issues), [Contributing](https://github.com/FriendsOfSilverStripe/release-notifications/blob/master/CONTRIBUTING.md), [License](https://github.com/FriendsOfSilverStripe/release-notifications/blob/master/license.md)
+## misc: [future ideas/development, issues](https://github.com/FriendsOfSilverStripe/release-notifications/issues), [contributing](https://github.com/FriendsOfSilverStripe/release-notifications/blob/master/CONTRIBUTING.md), [license](https://github.com/FriendsOfSilverStripe/release-notifications/blob/master/license.md)
