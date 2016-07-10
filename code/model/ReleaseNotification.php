@@ -31,7 +31,7 @@ class ReleaseNotification extends DataObject
         // only run if everything is fine
         if (!is_array($config) || empty($config)) {
             DB::alteration_message('No configuration found.', 'created');
-        } else if (!file_exists('../' . $config['filename'])) {
+        } elseif (!file_exists('../' . $config['filename'])) {
             DB::alteration_message('No CHANGELOG.md-file found.', 'created');
         } else {
             DB::alteration_message($config['environment_name'] . ' identified.', 'created');
@@ -45,7 +45,7 @@ class ReleaseNotification extends DataObject
             // check if the CHANGELOG.md file has been changed since the last run
             if ($changelog == '') {
                 DB::alteration_message('No CHANGELOG found.', 'created');
-            } else if (md5($changelog) != md5($record->Changelog)) {
+            } elseif (md5($changelog) != md5($record->Changelog)) {
                 // remove the former releases from the changelog
                 $release = trim(str_replace($record->Changelog, '', $changelog));
 
